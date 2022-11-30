@@ -38,9 +38,22 @@ export const postApi = createApi({
            }
         }
       }),
+      createPost: builder.mutation({
+        query: (body) =>{
+            console.log('get limit post by number: ',body);
+           return{
+            url: `posts`,
+            method: 'POST',
+            body: body,
+            headers:{
+                'Content-type': 'application/json; charset=UTF-8',
+            }
+           }
+        }
+      }),
     }),
   })
   
   // Export hooks for usage in functional components, which are
   // auto-generated based on the defined endpoints
-  export const { useGetAllPostQuery, useGetPostByIdQuery, useGetLimitByPostQuery, useDeletePostMutation } = postApi
+  export const { useGetAllPostQuery, useGetPostByIdQuery, useGetLimitByPostQuery, useDeletePostMutation,useCreatePostMutation } = postApi
