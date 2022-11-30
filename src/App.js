@@ -1,23 +1,16 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { useGetAllPostQuery } from './services/post'
 
 function App() {
+  const {data: allPost, isLoading} = useGetAllPostQuery();
+  if(isLoading){
+    return <p>loading...</p>
+  }
+  console.log(allPost);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Hello rtk query</h2>
     </div>
   );
 }
