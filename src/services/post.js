@@ -9,11 +9,20 @@ export const postApi = createApi({
         query: () =>({
             url: 'posts',
             method: 'GET'
-        }),
+        })
+      }),
+      getPostById: builder.query({
+        query: (id) =>{
+            console.log('single post id: ',id);
+           return{
+            url: `posts/${id}`,
+            method: 'GET'
+           }
+        }
       }),
     }),
   })
   
   // Export hooks for usage in functional components, which are
   // auto-generated based on the defined endpoints
-  export const { useGetAllPostQuery } = postApi
+  export const { useGetAllPostQuery, useGetPostByIdQuery } = postApi
