@@ -2,6 +2,7 @@
 import './App.css';
 import AllPost from './component/AllPost';
 import GetPostByLimit from './component/GetPostByLimit';
+import CounterView from './services/counter/CounterView';
 import { useDeletePostMutation, useCreatePostMutation } from './services/post';
 
 
@@ -21,10 +22,11 @@ function App() {
   return (
     <div className="App">
       {/* <button onClick={() =>(deletePost(5))}>Delete</button> */}
-      <button onClick={() =>(createPost(newPost))}>Create</button>
+      {/* <button onClick={() =>(createPost(newPost))}>Create</button> */}
       {/* <AllPost /> */}
       {/* <GetSinglePost /> */}
       {/* <GetPostByLimit /> */}
+      <CounterView />
      
      
     </div>

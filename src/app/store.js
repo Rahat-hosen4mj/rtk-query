@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 // Or from '@reduxjs/toolkit/query/react'
 import { setupListeners } from '@reduxjs/toolkit/query'
+import counterReducer from '../services/counter/counterSlice'
 import { postApi } from '../services/post'
 
 export const store = configureStore({
   reducer: {
+    counter: counterReducer,
     // Add the generated reducer as a specific top-level slice
     [postApi.reducerPath]: postApi.reducer,
   },
